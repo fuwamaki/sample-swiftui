@@ -12,14 +12,12 @@ struct SampleCView: View {
 
     var body: some View {
         // リアルタイムで値変動が起きる
-        Toggle(isOn: $viewModel.isEnabled) {
-            Text("The value is " + "\(viewModel.isEnabled)")
-        }
+        SampleRow(viewModel: .constant(viewModel))
     }
 }
 
 struct SampleCView_Previews: PreviewProvider {
     static var previews: some View {
-        SampleRow(viewModel: .constant(SampleCViewModel()))
+        SampleCView()
     }
 }
