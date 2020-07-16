@@ -12,7 +12,7 @@ struct SampleAView: View {
     @EnvironmentObject var viewModel: SampleViewModel
 
     var body: some View {
-        // うまく動作しない
+        // リアルタイムで値変動しない。Navigation戻って再表示すると正しい
         Toggle(isOn: $viewModel.isEnabled) {
             Text("The value is " + "\(viewModel.isEnabled)")
         }

@@ -11,6 +11,7 @@ struct SampleBView: View {
     @ObservedObject(initialValue: SampleBViewModel()) var viewModel: SampleBViewModel
 
     var body: some View {
+        // リアルタイムで値変動しない。Navigation戻って再表示すると正しい
         Toggle(isOn: $viewModel.isEnabled) {
             Text("The value is " + "\(viewModel.isEnabled)")
         }
