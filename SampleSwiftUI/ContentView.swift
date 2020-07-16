@@ -16,6 +16,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
+                Text("Environment isEnable:" + "\(enabled)")
                 NavigationLink(
                     destination: SampleAView(),
                     label: {
