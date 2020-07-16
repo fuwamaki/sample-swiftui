@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct SampleAView: View {
+
+    @EnvironmentObject var viewModel: SampleViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        // うまく動作しない
+        Toggle(isOn: $viewModel.isEnabled) {
+            Text("The value is " + "\(viewModel.isEnabled)")
+        }
     }
 }
 
 struct SampleAView_Previews: PreviewProvider {
     static var previews: some View {
         SampleAView()
+            .environmentObject(SampleViewModel())
     }
 }
