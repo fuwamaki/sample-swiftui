@@ -18,7 +18,8 @@ struct ContentView: View {
             List {
                 Text("Environment isEnable:" + "\(enabled)")
                 NavigationLink(
-                    destination: SampleAView(),
+                    destination: SampleAView()
+                        .environmentObject(SampleViewModel()),
                     label: {
                         Text("Sample A")
                             .frame(height: 44)
