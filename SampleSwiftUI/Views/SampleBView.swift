@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SampleBView: View {
+    @ObservedObject(initialValue: SampleBViewModel()) var viewModel: SampleBViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Toggle(isOn: $viewModel.isEnabled) {
+            Text("The value is " + "\(viewModel.isEnabled)")
+        }
     }
 }
 
