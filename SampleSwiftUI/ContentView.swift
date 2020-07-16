@@ -20,14 +20,14 @@ struct ContentView: View {
                 NavigationLink(
                     destination: SampleAView(),
                     label: {
-                        Text("Sample1")
+                        Text("Sample A")
                             .frame(height: 44)
                             .padding(.leading, 24)
                     })
                 NavigationLink(
-                    destination: SampleAView(),
+                    destination: SampleBView(),
                     label: {
-                        Text("Sample2")
+                        Text("Sample B")
                             .frame(height: 44)
                             .padding(.leading, 24)
                     })

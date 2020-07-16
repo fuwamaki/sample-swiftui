@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AD20924BF739800EA0B79 /* SampleAView.swift */; };
+		205DD6AA24C0AC7D00309AAD /* SampleBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6A924C0AC7D00309AAD /* SampleBView.swift */; };
 		20B16B1124BF511600511F43 /* SampleSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B16B1024BF511600511F43 /* SampleSwiftUIApp.swift */; };
 		20B16B1324BF511600511F43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B16B1224BF511600511F43 /* ContentView.swift */; };
 		20B16B1524BF511700511F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B16B1424BF511700511F43 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		202AD20924BF739800EA0B79 /* SampleAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAView.swift; sourceTree = "<group>"; };
+		205DD6A924C0AC7D00309AAD /* SampleBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBView.swift; sourceTree = "<group>"; };
 		20B16B0D24BF511600511F43 /* SampleSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B16B1024BF511600511F43 /* SampleSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSwiftUIApp.swift; sourceTree = "<group>"; };
 		20B16B1224BF511600511F43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				20B16B1024BF511600511F43 /* SampleSwiftUIApp.swift */,
 				20B16B1224BF511600511F43 /* ContentView.swift */,
 				202AD20924BF739800EA0B79 /* SampleAView.swift */,
+				205DD6A924C0AC7D00309AAD /* SampleBView.swift */,
 				20B16B1424BF511700511F43 /* Assets.xcassets */,
 				20B16B1924BF511700511F43 /* Info.plist */,
 				20B16B1624BF511700511F43 /* Preview Content */,
@@ -265,6 +268,7 @@
 				202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */,
 				20B16B1324BF511600511F43 /* ContentView.swift in Sources */,
 				20B16B1124BF511600511F43 /* SampleSwiftUIApp.swift in Sources */,
+				205DD6AA24C0AC7D00309AAD /* SampleBView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
