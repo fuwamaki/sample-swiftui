@@ -14,12 +14,14 @@
 		205DD6B424C0B3AB00309AAD /* SampleCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6B324C0B3AB00309AAD /* SampleCView.swift */; };
 		205DD6B624C0B3C300309AAD /* SampleCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6B524C0B3C300309AAD /* SampleCViewModel.swift */; };
 		205DD6B924C0B8D200309AAD /* SampleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6B824C0B8D200309AAD /* SampleRow.swift */; };
+		205DD6BB24C1450A00309AAD /* SampleDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6BA24C1450A00309AAD /* SampleDView.swift */; };
 		20B16B1124BF511600511F43 /* SampleSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B16B1024BF511600511F43 /* SampleSwiftUIApp.swift */; };
 		20B16B1324BF511600511F43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B16B1224BF511600511F43 /* ContentView.swift */; };
 		20B16B1524BF511700511F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B16B1424BF511700511F43 /* Assets.xcassets */; };
 		20B16B1824BF511700511F43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20B16B1724BF511700511F43 /* Preview Assets.xcassets */; };
 		20B16B2324BF511700511F43 /* SampleSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B16B2224BF511700511F43 /* SampleSwiftUITests.swift */; };
 		20B16B2E24BF511700511F43 /* SampleSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B16B2D24BF511700511F43 /* SampleSwiftUIUITests.swift */; };
+		20DBD85E24C14CAD00389ED9 /* SampleDRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBD85D24C14CAD00389ED9 /* SampleDRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 		205DD6B324C0B3AB00309AAD /* SampleCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCView.swift; sourceTree = "<group>"; };
 		205DD6B524C0B3C300309AAD /* SampleCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCViewModel.swift; sourceTree = "<group>"; };
 		205DD6B824C0B8D200309AAD /* SampleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRow.swift; sourceTree = "<group>"; };
+		205DD6BA24C1450A00309AAD /* SampleDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDView.swift; sourceTree = "<group>"; };
 		20B16B0D24BF511600511F43 /* SampleSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B16B1024BF511600511F43 /* SampleSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSwiftUIApp.swift; sourceTree = "<group>"; };
 		20B16B1224BF511600511F43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		20B16B2924BF511700511F43 /* SampleSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B16B2D24BF511700511F43 /* SampleSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSwiftUIUITests.swift; sourceTree = "<group>"; };
 		20B16B2F24BF511700511F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20DBD85D24C14CAD00389ED9 /* SampleDRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 				202AD20924BF739800EA0B79 /* SampleAView.swift */,
 				205DD6A924C0AC7D00309AAD /* SampleBView.swift */,
 				205DD6B324C0B3AB00309AAD /* SampleCView.swift */,
+				205DD6BA24C1450A00309AAD /* SampleDView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				205DD6B824C0B8D200309AAD /* SampleRow.swift */,
+				20DBD85D24C14CAD00389ED9 /* SampleDRow.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -309,6 +315,8 @@
 				205DD6B624C0B3C300309AAD /* SampleCViewModel.swift in Sources */,
 				205DD6B924C0B8D200309AAD /* SampleRow.swift in Sources */,
 				20B16B1124BF511600511F43 /* SampleSwiftUIApp.swift in Sources */,
+				205DD6BB24C1450A00309AAD /* SampleDView.swift in Sources */,
+				20DBD85E24C14CAD00389ED9 /* SampleDRow.swift in Sources */,
 				205DD6B424C0B3AB00309AAD /* SampleCView.swift in Sources */,
 				205DD6B024C0B2BC00309AAD /* SampleBViewModel.swift in Sources */,
 				205DD6AA24C0AC7D00309AAD /* SampleBView.swift in Sources */,

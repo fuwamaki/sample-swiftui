@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.isEnabled) var enabled: Bool
 
     @State private var isShowSetting: Bool = false
+    @ObservedObject(initialValue: SampleCViewModel()) var viewModel: SampleCViewModel
 
     var body: some View {
         NavigationView {
@@ -36,6 +37,13 @@ struct ContentView: View {
                     destination: SampleCView(),
                     label: {
                         Text("Sample C")
+                            .frame(height: 44)
+                            .padding(.leading, 24)
+                    })
+                NavigationLink(
+                    destination: SampleDView(viewModel: viewModel),
+                    label: {
+                        Text("Sample D")
                             .frame(height: 44)
                             .padding(.leading, 24)
                     })
