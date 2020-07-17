@@ -14,7 +14,7 @@ struct SampleERow: View {
         List {
             ForEach(viewModel.entities.indices, id: \.self) { index in
                 Toggle(isOn: self.$viewModel.entities[index].isEnabled) {
-                    Text("The value is " + "\(self.$viewModel.entities[index].isEnabled)")
+                    Text("The value is " + "\(self.viewModel.entities[index].isEnabled)")
                 }
             }
         }
