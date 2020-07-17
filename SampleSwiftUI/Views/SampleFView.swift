@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SampleFView: View {
 
+    // memo: AppStorageはArrayに対応していない
     @AppStorage("username")
     var username: String = "Anonymous"
 
