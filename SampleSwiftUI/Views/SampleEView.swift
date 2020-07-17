@@ -13,6 +13,8 @@ struct SampleEView: View {
 
     var body: some View {
         SampleERow(viewModel: viewModel)
+            .navigationTitle("Sample E")
+            .listStyle(GroupedListStyle())
     }
 }
 
