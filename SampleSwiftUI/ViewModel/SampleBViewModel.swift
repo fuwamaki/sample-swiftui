@@ -7,6 +7,7 @@
 
 import Combine
 
+// old
 class SampleBViewModel: ObservableObject {
 
     let willChange = PassthroughSubject<SampleBViewModel, Never>()
