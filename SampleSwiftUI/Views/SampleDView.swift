@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// ObservedObjectのサンプルコード
 struct SampleDView: View {
 
     @ObservedObject var viewModel: SampleCViewModel

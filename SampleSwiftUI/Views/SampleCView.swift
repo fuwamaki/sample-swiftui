@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// .constantを用いるObservedObjectのサンプルコード
 struct SampleCView: View {
     @ObservedObject(initialValue: SampleCViewModel()) var viewModel: SampleCViewModel
 

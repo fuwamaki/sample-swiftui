@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TextEditorのサンプルコード
 struct SampleGView: View {
 
     @State private var fullText: String = "This is some editable text..."

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// 失敗ケース
 struct SampleBView: View {
     @ObservedObject(initialValue: SampleBViewModel()) var viewModel: SampleBViewModel
 

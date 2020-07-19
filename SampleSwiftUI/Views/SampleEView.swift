@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// 配列時のObservedObjectのサンプルコード
 struct SampleEView: View {
 
     @ObservedObject var viewModel: SampleEViewModel

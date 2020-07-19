@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// 失敗ケース
 struct SampleAView: View {
 
     @EnvironmentObject var viewModel: SampleViewModel

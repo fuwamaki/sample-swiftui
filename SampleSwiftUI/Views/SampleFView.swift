@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// AppStorageのサンプルコード
 struct SampleFView: View {
 
     // memo: AppStorageはArrayに対応していない
