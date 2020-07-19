@@ -12,6 +12,8 @@
 		2010EEA224C42A6A009CD040 /* SampleJView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEA124C42A6A009CD040 /* SampleJView.swift */; };
 		2010EEA424C42AD2009CD040 /* SampleKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEA324C42AD2009CD040 /* SampleKView.swift */; };
 		2010EEA624C42EAA009CD040 /* SampleLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEA524C42EAA009CD040 /* SampleLView.swift */; };
+		2010EEA824C43145009CD040 /* SampleMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEA724C43145009CD040 /* SampleMView.swift */; };
+		2010EEAA24C4993F009CD040 /* SampleNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEA924C4993F009CD040 /* SampleNView.swift */; };
 		202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AD20924BF739800EA0B79 /* SampleAView.swift */; };
 		205DD6AA24C0AC7D00309AAD /* SampleBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6A924C0AC7D00309AAD /* SampleBView.swift */; };
 		205DD6AE24C0ACE500309AAD /* SampleAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6AD24C0ACE500309AAD /* SampleAViewModel.swift */; };
@@ -57,6 +59,8 @@
 		2010EEA124C42A6A009CD040 /* SampleJView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleJView.swift; sourceTree = "<group>"; };
 		2010EEA324C42AD2009CD040 /* SampleKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleKView.swift; sourceTree = "<group>"; };
 		2010EEA524C42EAA009CD040 /* SampleLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLView.swift; sourceTree = "<group>"; };
+		2010EEA724C43145009CD040 /* SampleMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMView.swift; sourceTree = "<group>"; };
+		2010EEA924C4993F009CD040 /* SampleNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleNView.swift; sourceTree = "<group>"; };
 		202AD20924BF739800EA0B79 /* SampleAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAView.swift; sourceTree = "<group>"; };
 		205DD6A924C0AC7D00309AAD /* SampleBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBView.swift; sourceTree = "<group>"; };
 		205DD6AD24C0ACE500309AAD /* SampleAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAViewModel.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				2010EEA124C42A6A009CD040 /* SampleJView.swift */,
 				2010EEA324C42AD2009CD040 /* SampleKView.swift */,
 				2010EEA524C42EAA009CD040 /* SampleLView.swift */,
+				2010EEA724C43145009CD040 /* SampleMView.swift */,
+				2010EEA924C4993F009CD040 /* SampleNView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -342,8 +348,10 @@
 			files = (
 				2088BA4624C1FAA400B38A11 /* SampleGView.swift in Sources */,
 				2010EE9E24C42999009CD040 /* SampleHView.swift in Sources */,
+				2010EEAA24C4993F009CD040 /* SampleNView.swift in Sources */,
 				2010EEA024C42A0A009CD040 /* SampleIView.swift in Sources */,
 				20DBD86024C151FA00389ED9 /* SampleEViewModel.swift in Sources */,
+				2010EEA824C43145009CD040 /* SampleMView.swift in Sources */,
 				20DBD86224C1520600389ED9 /* SampleEView.swift in Sources */,
 				202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */,
 				20B16B1324BF511600511F43 /* ContentView.swift in Sources */,

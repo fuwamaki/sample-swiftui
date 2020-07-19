@@ -108,6 +108,20 @@ struct ContentView: View {
                                 .frame(height: 44)
                                 .padding(.leading, 24)
                         })
+                    NavigationLink(
+                        destination: SampleMView(),
+                        label: {
+                            Text("Sample M")
+                                .frame(height: 44)
+                                .padding(.leading, 24)
+                        })
+                    NavigationLink(
+                        destination: SampleNView(),
+                        label: {
+                            Text("Sample N")
+                                .frame(height: 44)
+                                .padding(.leading, 24)
+                        })
                 }
             }
             .navigationTitle("SampleSwiftUI")
