@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// ColorPickerのサンプルコード
 struct SampleKView: View {
     @State private var bgColor = Color(.sRGB, red: 0.98, green: 0.9, blue: 0.2)
 
