@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2010EE9E24C42999009CD040 /* SampleHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EE9D24C42999009CD040 /* SampleHView.swift */; };
 		202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AD20924BF739800EA0B79 /* SampleAView.swift */; };
 		205DD6AA24C0AC7D00309AAD /* SampleBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6A924C0AC7D00309AAD /* SampleBView.swift */; };
 		205DD6AE24C0ACE500309AAD /* SampleAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6AD24C0ACE500309AAD /* SampleAViewModel.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2010EE9D24C42999009CD040 /* SampleHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHView.swift; sourceTree = "<group>"; };
 		202AD20924BF739800EA0B79 /* SampleAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAView.swift; sourceTree = "<group>"; };
 		205DD6A924C0AC7D00309AAD /* SampleBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBView.swift; sourceTree = "<group>"; };
 		205DD6AD24C0ACE500309AAD /* SampleAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAViewModel.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				20DBD86124C1520600389ED9 /* SampleEView.swift */,
 				2088BA3D24C184F300B38A11 /* SampleFView.swift */,
 				2088BA4524C1FAA400B38A11 /* SampleGView.swift */,
+				2010EE9D24C42999009CD040 /* SampleHView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2088BA4624C1FAA400B38A11 /* SampleGView.swift in Sources */,
+				2010EE9E24C42999009CD040 /* SampleHView.swift in Sources */,
 				20DBD86024C151FA00389ED9 /* SampleEViewModel.swift in Sources */,
 				20DBD86224C1520600389ED9 /* SampleEView.swift in Sources */,
 				202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */,
