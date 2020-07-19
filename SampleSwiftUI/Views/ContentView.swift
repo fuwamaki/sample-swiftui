@@ -17,8 +17,10 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
+            VStack {
                 Text("Environment isEnable:" + "\(enabled)")
+                    .padding(.all, 8)
+                List {
                 NavigationLink(
                     destination: SampleAView()
                         .environmentObject(SampleViewModel()),
@@ -90,6 +92,7 @@ struct ContentView: View {
                             .frame(height: 44)
                             .padding(.leading, 24)
                     })
+                }
             }
             .navigationTitle("SampleSwiftUI")
             .navigationBarItems(
