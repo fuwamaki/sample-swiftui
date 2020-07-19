@@ -14,6 +14,9 @@
 		2010EEA624C42EAA009CD040 /* SampleLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEA524C42EAA009CD040 /* SampleLView.swift */; };
 		2010EEA824C43145009CD040 /* SampleMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEA724C43145009CD040 /* SampleMView.swift */; };
 		2010EEAA24C4993F009CD040 /* SampleNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEA924C4993F009CD040 /* SampleNView.swift */; };
+		2010EEAC24C49A23009CD040 /* SampleOView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEAB24C49A23009CD040 /* SampleOView.swift */; };
+		2010EEAE24C49A31009CD040 /* SamplePView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEAD24C49A31009CD040 /* SamplePView.swift */; };
+		2010EEB024C49A5F009CD040 /* SampleQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEAF24C49A5F009CD040 /* SampleQView.swift */; };
 		202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AD20924BF739800EA0B79 /* SampleAView.swift */; };
 		205DD6AA24C0AC7D00309AAD /* SampleBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6A924C0AC7D00309AAD /* SampleBView.swift */; };
 		205DD6AE24C0ACE500309AAD /* SampleAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6AD24C0ACE500309AAD /* SampleAViewModel.swift */; };
@@ -61,6 +64,9 @@
 		2010EEA524C42EAA009CD040 /* SampleLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleLView.swift; sourceTree = "<group>"; };
 		2010EEA724C43145009CD040 /* SampleMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMView.swift; sourceTree = "<group>"; };
 		2010EEA924C4993F009CD040 /* SampleNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleNView.swift; sourceTree = "<group>"; };
+		2010EEAB24C49A23009CD040 /* SampleOView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOView.swift; sourceTree = "<group>"; };
+		2010EEAD24C49A31009CD040 /* SamplePView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePView.swift; sourceTree = "<group>"; };
+		2010EEAF24C49A5F009CD040 /* SampleQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleQView.swift; sourceTree = "<group>"; };
 		202AD20924BF739800EA0B79 /* SampleAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAView.swift; sourceTree = "<group>"; };
 		205DD6A924C0AC7D00309AAD /* SampleBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBView.swift; sourceTree = "<group>"; };
 		205DD6AD24C0ACE500309AAD /* SampleAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAViewModel.swift; sourceTree = "<group>"; };
@@ -132,6 +138,9 @@
 				2010EEA524C42EAA009CD040 /* SampleLView.swift */,
 				2010EEA724C43145009CD040 /* SampleMView.swift */,
 				2010EEA924C4993F009CD040 /* SampleNView.swift */,
+				2010EEAB24C49A23009CD040 /* SampleOView.swift */,
+				2010EEAD24C49A31009CD040 /* SamplePView.swift */,
+				2010EEAF24C49A5F009CD040 /* SampleQView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,12 +371,15 @@
 				2010EEA224C42A6A009CD040 /* SampleJView.swift in Sources */,
 				20B16B1124BF511600511F43 /* SampleSwiftUIApp.swift in Sources */,
 				205DD6BB24C1450A00309AAD /* SampleDView.swift in Sources */,
+				2010EEAC24C49A23009CD040 /* SampleOView.swift in Sources */,
 				20DBD86424C1523100389ED9 /* SampleERow.swift in Sources */,
 				20DBD85E24C14CAD00389ED9 /* SampleDRow.swift in Sources */,
 				205DD6B424C0B3AB00309AAD /* SampleCView.swift in Sources */,
 				205DD6B024C0B2BC00309AAD /* SampleBViewModel.swift in Sources */,
 				205DD6AA24C0AC7D00309AAD /* SampleBView.swift in Sources */,
+				2010EEAE24C49A31009CD040 /* SamplePView.swift in Sources */,
 				205DD6AE24C0ACE500309AAD /* SampleAViewModel.swift in Sources */,
+				2010EEB024C49A5F009CD040 /* SampleQView.swift in Sources */,
 				2088BA3E24C184F300B38A11 /* SampleFView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
