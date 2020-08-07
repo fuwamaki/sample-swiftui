@@ -15,11 +15,24 @@ struct SampleWView: View {
             VStack {
                 Text("Driver")
                 VStack {
-                    Image(systemName: "house")
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                    Text("Home")
-                    Text(String(images.count))
+                    ZStack {
+                        VStack {
+                            Image(systemName: "house")
+                                .resizable()
+                                .frame(width: 60, height: 60)
+                            Text("Home")
+                        }
+                        if (images.count > 0) {
+                            Text(String(images.count))
+                                .frame(width: 30, height: 30)
+                                .background(Color.red)
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .cornerRadius(15.0)
+                                .padding(.bottom, 62)
+                                .padding(.leading, 48)
+                        }
+                    }
                 }
                 .frame(width: 100, height: 100)
                 .overlay(RoundedRectangle(cornerRadius: 8.0)
