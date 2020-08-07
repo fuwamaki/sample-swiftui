@@ -175,6 +175,15 @@ struct ContentView: View {
                                     .padding(.leading, 24)
                             })
                     }
+                    VStack {
+                        NavigationLink(
+                            destination: SampleVView(),
+                            label: {
+                                Text("Sample V")
+                                    .frame(height: 44)
+                                    .padding(.leading, 24)
+                            })
+                    }
                 }
                 .navigationTitle("SampleSwiftUI")
                 .navigationBarItems(
