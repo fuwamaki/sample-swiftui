@@ -75,33 +75,16 @@ struct WMyDropDelegate: DropDelegate {
     @Binding var images: [UIImage]
 
     func performDrop(info: DropInfo) -> Bool {
-        let gridPosition = getGridPosition(location: info.location)
-        print("WperformDrop")
         if let item = info.itemProviders(for: ["public.image"]).first {
             item.loadObject(ofClass: UIImage.self) { image, error in
                 if let image = image as? UIImage {
                     self.images.append(image)
+                    print(item.suggestedName)
                 }
             }
             return true
         } else {
             return false
-        }
-    }
-
-    private func getGridPosition(location: CGPoint) -> Int {
-        let x = location.x - 464.0
-        let y = location.y - 65.0
-        if x > 150 && y > 150 {
-            return 4
-        } else if x > 150 && y < 150 {
-            return 3
-        } else if x < 150 && y > 150 {
-            return 2
-        } else if x < 150 && y < 150 {
-            return 1
-        } else {
-            return 0
         }
     }
 }
