@@ -67,13 +67,15 @@ struct SampleWView: View {
                             .font(.title)
                     }
                     .padding(8.0)
-                    .background(Color.white)
+                    .background(Color.backgroundPrimary)
                     .cornerRadius(8.0)
                     .onDrag {
                         let provider = NSItemProvider(object: UIImage(systemName: "home") ?? UIImage())
                         provider.suggestedName = "Taro"
                         print("startDrag")
                         self.isDragging.toggle()
+                        let generator = UINotificationFeedbackGenerator()
+                        generator.notificationOccurred(.error)
                         return provider
                     }
                     HStack {
@@ -84,13 +86,16 @@ struct SampleWView: View {
                             .font(.title)
                     }
                     .padding(8.0)
-                    .background(Color.white)
+                    .background(Color.backgroundPrimary)
                     .cornerRadius(8.0)
                     .onDrag {
                         let provider = NSItemProvider(object: UIImage(systemName: "home") ?? UIImage())
                         provider.suggestedName = "Hanako"
                         print("startDrag")
                         self.isDragging.toggle()
+                        let generator = UIImpactFeedbackGenerator(style: .heavy)
+                        generator.prepare()
+                        generator.impactOccurred()
                         return provider
                     }
                     Spacer()
