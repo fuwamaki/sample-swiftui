@@ -27,6 +27,8 @@
 		2057A06924DDB72B0050B196 /* SampleUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057A06824DDB72B0050B196 /* SampleUView.swift */; };
 		2057A06B24DDBF990050B196 /* SampleVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057A06A24DDBF990050B196 /* SampleVView.swift */; };
 		2057A06D24DDC7D20050B196 /* SampleWView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057A06C24DDC7D20050B196 /* SampleWView.swift */; };
+		2057A06F24DE80220050B196 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2057A06E24DE80220050B196 /* Colors.xcassets */; };
+		2057A07224DE80570050B196 /* Color+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057A07124DE80570050B196 /* Color+Addition.swift */; };
 		205DD6AA24C0AC7D00309AAD /* SampleBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6A924C0AC7D00309AAD /* SampleBView.swift */; };
 		205DD6AE24C0ACE500309AAD /* SampleAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6AD24C0ACE500309AAD /* SampleAViewModel.swift */; };
 		205DD6B024C0B2BC00309AAD /* SampleBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DD6AF24C0B2BC00309AAD /* SampleBViewModel.swift */; };
@@ -87,6 +89,8 @@
 		2057A06824DDB72B0050B196 /* SampleUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUView.swift; sourceTree = "<group>"; };
 		2057A06A24DDBF990050B196 /* SampleVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleVView.swift; sourceTree = "<group>"; };
 		2057A06C24DDC7D20050B196 /* SampleWView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleWView.swift; sourceTree = "<group>"; };
+		2057A06E24DE80220050B196 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		2057A07124DE80570050B196 /* Color+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Addition.swift"; sourceTree = "<group>"; };
 		205DD6A924C0AC7D00309AAD /* SampleBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBView.swift; sourceTree = "<group>"; };
 		205DD6AD24C0ACE500309AAD /* SampleAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAViewModel.swift; sourceTree = "<group>"; };
 		205DD6AF24C0B2BC00309AAD /* SampleBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBViewModel.swift; sourceTree = "<group>"; };
@@ -140,6 +144,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2057A07024DE80460050B196 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2057A07124DE80570050B196 /* Color+Addition.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		205DD6AB24C0ACC700309AAD /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,10 +233,12 @@
 				2057A06324DDB0700050B196 /* lemon.jpg */,
 				2057A06124DDB0700050B196 /* orange.jpg */,
 				20B16B1424BF511700511F43 /* Assets.xcassets */,
+				2057A06E24DE80220050B196 /* Colors.xcassets */,
 				20B16B1024BF511600511F43 /* SampleSwiftUIApp.swift */,
 				205DD6AB24C0ACC700309AAD /* Views */,
 				205DD6B724C0B8B900309AAD /* ViewComponents */,
 				205DD6AC24C0ACCF00309AAD /* ViewModel */,
+				2057A07024DE80460050B196 /* Extension */,
 				20B16B1624BF511700511F43 /* Preview Content */,
 			);
 			path = SampleSwiftUI;
@@ -365,6 +379,7 @@
 				20B16B1524BF511700511F43 /* Assets.xcassets in Resources */,
 				2057A06624DDB0700050B196 /* apple.jpg in Resources */,
 				2057A06724DDB0700050B196 /* lemon.jpg in Resources */,
+				2057A06F24DE80220050B196 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +434,7 @@
 				205DD6AE24C0ACE500309AAD /* SampleAViewModel.swift in Sources */,
 				2057A06924DDB72B0050B196 /* SampleUView.swift in Sources */,
 				2010EEB224C49CB5009CD040 /* SampleRView.swift in Sources */,
+				2057A07224DE80570050B196 /* Color+Addition.swift in Sources */,
 				2010EEB024C49A5F009CD040 /* SampleQView.swift in Sources */,
 				2088BA3E24C184F300B38A11 /* SampleFView.swift in Sources */,
 			);
