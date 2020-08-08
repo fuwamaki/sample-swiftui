@@ -62,6 +62,7 @@ struct SampleWView: View {
                 .onDrag {
                     let provider = NSItemProvider(object: UIImage(systemName: "home") ?? UIImage())
                     provider.suggestedName = "Taro"
+                    print("startDrag")
                     return provider
                 }
                 Spacer()
@@ -86,6 +87,20 @@ struct WMyDropDelegate: DropDelegate {
         } else {
             return false
         }
+    }
+    func dropEntered(info: DropInfo) {
+        print("dropEntered")
+    }
+    func dropUpdated(info: DropInfo) -> DropProposal? {
+        print("dropUpdate")
+        return nil
+    }
+    func dropExited(info: DropInfo) {
+        print("dropExited")
+    }
+    func validateDrop(info: DropInfo) -> Bool {
+        print("dropValidate")
+        return true
     }
 }
 
