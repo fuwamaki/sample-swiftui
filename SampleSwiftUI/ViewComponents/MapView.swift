@@ -67,9 +67,45 @@ struct MapView: UIViewRepresentable {
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = coordinate
                     mapView.addAnnotation(annotation)
+                    addRoute(view: mapView, tapAnnotation: annotation)
                 }
             }
         }
+
+        private func addRoute(view: MKMapView, tapAnnotation: MKPointAnnotation) {
+            let directionsRequest = MKDirections.Request()
+            let coordinates: [CLLocationCoordinate2D] = [
+                mapView.currentLocation.coordinate,
+                tapAnnotation.coordinate]
+            let placemarks: [MKMapItem] = coordinates.compactMap {
+                return MKMapItem(placemark: MKPlacemark(coordinate: $0)) }
+            directionsRequest.transportType = .automobile
+            placemarks.enumerated().forEach {
+                if $0 < placemarks.count-1 {
+                    directionsRequest.source = $1
+                    directionsRequest.destination = placemarks[$0+1]
+                    let direction = MKDirections(request: directionsRequest)
+                    direction.calculate { response, error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else if let polyline = response?.routes[0].polyline {
+                            view.addOverlay(polyline, level: .aboveRoads)
+                        }
+                    }
+                }
+            }
+        }
+
+        // MARK: MKMapViewDelegate
+        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+            let route: MKPolyline = overlay as! MKPolyline
+            let routeRenderer = MKPolylineRenderer(polyline: route)
+            routeRenderer.strokeColor = UIColor(red:1.00, green:0.35, blue:0.30, alpha:1.0)
+            routeRenderer.lineWidth = 3.0
+            return routeRenderer
+        }
+
+        // MARK: CLLocationManagerDelegate
 
         // 位置情報が変わったら更新
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
