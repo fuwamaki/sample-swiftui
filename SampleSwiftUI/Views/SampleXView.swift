@@ -9,7 +9,14 @@ import SwiftUI
 
 struct SampleXView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            MapView()
+                .edgesIgnoringSafeArea(.bottom)
+                .padding(.top, 0)
+                .frame(maxWidth: .infinity,
+                       maxHeight: .infinity)
+        }
+        .navigationTitle("Map")
     }
 }
 

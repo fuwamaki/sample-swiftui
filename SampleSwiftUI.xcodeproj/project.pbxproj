@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2004758E24E2207C0024EC93 /* SampleXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2004758D24E2207C0024EC93 /* SampleXView.swift */; };
+		2004759024E226A70024EC93 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2004758F24E226A70024EC93 /* MapView.swift */; };
 		2010EE9E24C42999009CD040 /* SampleHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EE9D24C42999009CD040 /* SampleHView.swift */; };
 		2010EEA024C42A0A009CD040 /* SampleIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EE9F24C42A0A009CD040 /* SampleIView.swift */; };
 		2010EEA224C42A6A009CD040 /* SampleJView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEA124C42A6A009CD040 /* SampleJView.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		2004758D24E2207C0024EC93 /* SampleXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleXView.swift; sourceTree = "<group>"; };
+		2004758F24E226A70024EC93 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2010EE9D24C42999009CD040 /* SampleHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHView.swift; sourceTree = "<group>"; };
 		2010EE9F24C42A0A009CD040 /* SampleIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleIView.swift; sourceTree = "<group>"; };
 		2010EEA124C42A6A009CD040 /* SampleJView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleJView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				205DD6B824C0B8D200309AAD /* SampleRow.swift */,
 				20DBD85D24C14CAD00389ED9 /* SampleDRow.swift */,
 				20DBD86324C1523100389ED9 /* SampleERow.swift */,
+				2004758F24E226A70024EC93 /* MapView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				2010EEAA24C4993F009CD040 /* SampleNView.swift in Sources */,
 				2010EEA024C42A0A009CD040 /* SampleIView.swift in Sources */,
 				20DBD86024C151FA00389ED9 /* SampleEViewModel.swift in Sources */,
+				2004759024E226A70024EC93 /* MapView.swift in Sources */,
 				2010EEA824C43145009CD040 /* SampleMView.swift in Sources */,
 				20DBD86224C1520600389ED9 /* SampleEView.swift in Sources */,
 				202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */,
