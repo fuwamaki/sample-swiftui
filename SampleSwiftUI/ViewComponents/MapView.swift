@@ -47,6 +47,12 @@ struct MapView: UIViewRepresentable {
                 let region = MKCoordinateRegion(center: location, span: span)
                 uiView.setRegion(region, animated: true)
             }
+        case .guide:
+            if let location = locationManager.location?.coordinate {
+                let region = MKCoordinateRegion(center: location, span: span)
+                uiView.setRegion(region, animated: true)
+            }
+            uiView.userTrackingMode = .follow
         default:
             break
         }
