@@ -10,6 +10,7 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
 
+    @ObservedObject var mapRoute: MapRoute
     @ObservedObject var currentLocation: MapPin = sampleMapPin
 
     var locationManager: CLLocationManager = CLLocationManager()
@@ -85,11 +86,17 @@ struct MapView: UIViewRepresentable {
                     directionsRequest.source = $1
                     directionsRequest.destination = placemarks[$0+1]
                     let direction = MKDirections(request: directionsRequest)
-                    direction.calculate { response, error in
+                    direction.calculate { [weak self] response, error in
                         if let error = error {
                             print(error.localizedDescription)
                         } else if let polyline = response?.routes[0].polyline {
                             view.addOverlay(polyline, level: .aboveRoads)
+                            if let route = response?.routes[0] {
+                                self?.mapView.mapRoute.time = route.expectedTravelTime
+                                self?.mapView.mapRoute.advisoryNotices = route.advisoryNotices
+                                self?.mapView.mapRoute.distance = route.distance
+                                self?.mapView.mapRoute.name = route.name
+                            }
                         }
                     }
                 }
@@ -146,6 +153,9 @@ struct MapView: UIViewRepresentable {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(mapRoute: MapRoute(time: 60.0,
+                                   name: "渋谷",
+                                   distance: 22.0,
+                                   advisoryNotices: []))
     }
 }
