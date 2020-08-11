@@ -193,6 +193,16 @@ struct ContentView: View {
                                     .padding(.leading, 24)
                             })
                     }
+                    VStack {
+                        NavigationLink(
+                            destination: SampleXView(),
+                            label: {
+                                Text("Sample X")
+                                    .frame(height: 44)
+                                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                                    .padding(.leading, 24)
+                            })
+                    }
                 }
                 .navigationTitle("SampleSwiftUI")
                 .navigationBarItems(
