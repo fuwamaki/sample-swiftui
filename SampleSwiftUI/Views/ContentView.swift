@@ -19,8 +19,11 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Text("Environment isEnable:" + "\(enabled)")
-                        .padding(.all, 8)
+                    VStack {
+                        Text("Environment isEnable:" + "\(enabled)")
+                            .padding(.all, 8)
+                        Divider()
+                    }
                     VStack {
                         NavigationLink(
                             destination: SampleAView()
@@ -28,71 +31,103 @@ struct ContentView: View {
                             label: {
                                 Text("Sample A")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleBView(),
                             label: {
                                 Text("Sample B")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleCView(),
                             label: {
                                 Text("Sample C")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleDView(viewModel: cviewModel),
                             label: {
                                 Text("Sample D")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleEView(viewModel: eviewModel),
                             label: {
                                 Text("Sample E")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
+                    }
+                    VStack {
                         NavigationLink(
                             destination: SampleFView(),
                             label: {
                                 Text("Sample F")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleGView(),
                             label: {
                                 Text("Sample G")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleHView(),
                             label: {
                                 Text("Sample H")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleIView(),
                             label: {
                                 Text("Sample I")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleJView(),
                             label: {
                                 Text("Sample J")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                     }
                     VStack {
                         NavigationLink(
@@ -100,71 +135,103 @@ struct ContentView: View {
                             label: {
                                 Text("Sample K")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleLView(),
                             label: {
                                 Text("Sample L")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleMView(),
                             label: {
                                 Text("Sample M")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleNView(),
                             label: {
                                 Text("Sample N")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleOView(),
                             label: {
                                 Text("Sample O")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
+                    }
+                    VStack {
                         NavigationLink(
                             destination: SamplePView(),
                             label: {
                                 Text("Sample P")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleQView(),
                             label: {
                                 Text("Sample Q")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleRView(),
                             label: {
                                 Text("Sample R")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleSView(),
                             label: {
                                 Text("Sample S")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                         NavigationLink(
                             destination: SampleTView(),
                             label: {
                                 Text("Sample T")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                     }
                     VStack {
                         NavigationLink(
@@ -172,36 +239,41 @@ struct ContentView: View {
                             label: {
                                 Text("Sample U")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
-                    }
-                    VStack {
+                        Divider()
                         NavigationLink(
                             destination: SampleVView(),
                             label: {
                                 Text("Sample V")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
-                    }
-                    VStack {
+                        Divider()
                         NavigationLink(
                             destination: SampleWView(),
                             label: {
                                 Text("Sample W")
                                     .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
-                    }
-                    VStack {
+                        Divider()
                         NavigationLink(
                             destination: SampleXView(),
                             label: {
                                 Text("Sample X")
                                     .frame(height: 44)
-                                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
                                     .padding(.leading, 24)
                             })
+                        Divider()
                     }
                 }
                 .navigationTitle("SampleSwiftUI")
