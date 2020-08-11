@@ -10,6 +10,7 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
 
+    @Binding var mode: MapSearchMode
     @ObservedObject var mapRoute: MapRoute
     @ObservedObject var currentLocation: MapPin = sampleMapPin
 
@@ -40,9 +41,14 @@ struct MapView: UIViewRepresentable {
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
         let span = MKCoordinateSpan(latitudeDelta: 0.009, longitudeDelta: 0.009)
-        if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion(center: location, span: span)
-            uiView.setRegion(region, animated: true)
+        switch mode {
+        case .normal:
+            if let location = locationManager.location?.coordinate {
+                let region = MKCoordinateRegion(center: location, span: span)
+                uiView.setRegion(region, animated: true)
+            }
+        default:
+            break
         }
     }
 
@@ -74,6 +80,7 @@ struct MapView: UIViewRepresentable {
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = coordinate
                     mapView.addAnnotation(annotation)
+                    self.mapView.mode = .route
                     addRoute(view: mapView, tapAnnotation: annotation)
                 }
             }
@@ -103,6 +110,12 @@ struct MapView: UIViewRepresentable {
                                 self?.mapView.mapRoute.distance = route.distance
                                 self?.mapView.mapRoute.name = route.name
                             }
+                            view.setVisibleMapRect(polyline.boundingMapRect,
+                                                   edgePadding: UIEdgeInsets(top: 48,
+                                                                             left: 48,
+                                                                             bottom: 100,
+                                                                             right: 48),
+                                                   animated: true)
                         }
                     }
                 }
@@ -159,9 +172,9 @@ struct MapView: UIViewRepresentable {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(mapRoute: MapRoute(time: 60.0,
-                                   name: "渋谷",
-                                   distance: 22.0,
-                                   advisoryNotices: []))
+        MapView(mode: .constant(.normal), mapRoute: MapRoute(time: 60.0,
+                                                             name: "渋谷",
+                                                             distance: 22.0,
+                                                             advisoryNotices: []))
     }
 }
