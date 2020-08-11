@@ -63,6 +63,12 @@ struct MapView: UIViewRepresentable {
             guard gesture.numberOfTapsRequired == 1 else { return }
             if gesture.state == .ended {
                 if let mapView = gesture.view as? MKMapView {
+                    if mapView.annotations.count > 0 {
+                        mapView.removeAnnotations(mapView.annotations)
+                    }
+                    if mapView.overlays.count > 0 {
+                        mapView.removeOverlays(mapView.overlays)
+                    }
                     let point = gesture.location(in: mapView)
                     let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
                     let annotation = MKPointAnnotation()
