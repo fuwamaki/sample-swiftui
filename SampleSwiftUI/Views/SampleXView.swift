@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// UIKitのMapを利用した場合
 struct SampleXView: View {
     var body: some View {
         ZStack {

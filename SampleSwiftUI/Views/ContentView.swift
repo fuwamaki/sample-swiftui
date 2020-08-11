@@ -274,6 +274,16 @@ struct ContentView: View {
                                     .padding(.leading, 24)
                             })
                         Divider()
+                        NavigationLink(
+                            destination: SampleYView(),
+                            label: {
+                                Text("Sample Y")
+                                    .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
+                                    .padding(.leading, 24)
+                            })
+                        Divider()
                     }
                 }
                 .navigationTitle("SampleSwiftUI")
