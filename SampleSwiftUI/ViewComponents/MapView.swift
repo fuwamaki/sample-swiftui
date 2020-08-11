@@ -72,31 +72,35 @@ struct MapView: UIViewRepresentable {
 
         @objc func addAnnotation(gesture: UITapGestureRecognizer) {
             // シングルタップのみ判定
-            guard gesture.numberOfTapsRequired == 1 else { return }
-            if gesture.state == .ended {
-                if let mapView = gesture.view as? MKMapView {
-                    if mapView.annotations.count > 0 {
-                        mapView.removeAnnotations(mapView.annotations)
-                    }
-                    if mapView.overlays.count > 0 {
-                        mapView.removeOverlays(mapView.overlays)
-                    }
-                    let point = gesture.location(in: mapView)
-                    let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = coordinate
-                    mapView.addAnnotation(annotation)
-                    self.mapView.mode = .route
-                    addRoute(view: mapView, tapAnnotation: annotation)
+            guard gesture.numberOfTapsRequired == 1,
+                  gesture.state == .ended,
+                  let view = gesture.view as? MKMapView else { return }
+            switch mapView.mode {
+            case .normal, .route:
+                if view.annotations.count > 0 {
+                    view.removeAnnotations(view.annotations)
                 }
+                if view.overlays.count > 0 {
+                    view.removeOverlays(view.overlays)
+                }
+                let point = gesture.location(in: view)
+                let coordinate = view.convert(point, toCoordinateFrom: view)
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = coordinate
+                view.addAnnotation(annotation)
+                self.mapView.mode = .route
+                addRoute(view: view, tapAnnotation: annotation)
+            case .guide:
+                let point = gesture.location(in: view)
+                let coordinate = view.convert(point, toCoordinateFrom: view)
+                print("latitude: " + String(coordinate.latitude) + "  longitude: " + String(coordinate.longitude))
             }
         }
 
         private func addRoute(view: MKMapView, tapAnnotation: MKPointAnnotation) {
             let directionsRequest = MKDirections.Request()
-            let coordinates: [CLLocationCoordinate2D] = [
-                mapView.currentLocation.coordinate,
-                tapAnnotation.coordinate]
+            let coordinates: [CLLocationCoordinate2D] = [mapView.currentLocation.coordinate,
+                                                         tapAnnotation.coordinate]
             let placemarks: [MKMapItem] = coordinates.compactMap {
                 return MKMapItem(placemark: MKPlacemark(coordinate: $0)) }
             directionsRequest.transportType = .automobile
@@ -116,11 +120,9 @@ struct MapView: UIViewRepresentable {
                                 self?.mapView.mapRoute.distance = route.distance
                                 self?.mapView.mapRoute.name = route.name
                             }
+                            let insets = UIEdgeInsets(top: 48, left: 48, bottom: 100, right: 48)
                             view.setVisibleMapRect(polyline.boundingMapRect,
-                                                   edgePadding: UIEdgeInsets(top: 48,
-                                                                             left: 48,
-                                                                             bottom: 100,
-                                                                             right: 48),
+                                                   edgePadding: insets,
                                                    animated: true)
                         }
                     }
