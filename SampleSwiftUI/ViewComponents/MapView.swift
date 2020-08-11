@@ -13,10 +13,19 @@ struct MapView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> MKMapView {
         let myMapView = MKMapView(frame: .zero)
-        let longPress = UILongPressGestureRecognizer(target: context.coordinator,
-                                                     action: #selector(Coordinator.addAnnotation(gesture:)))
-        longPress.minimumPressDuration = 0.5
-        myMapView.addGestureRecognizer(longPress)
+        let tapGesture = UITapGestureRecognizer(
+            target: context.coordinator,
+            action: #selector(Coordinator.addAnnotation(gesture:)))
+        tapGesture.numberOfTapsRequired = 1
+        myMapView.addGestureRecognizer(tapGesture)
+
+        let doubleTapGesture = UITapGestureRecognizer(
+            target: context.coordinator,
+            action: #selector(Coordinator.addAnnotation(gesture:)))
+        doubleTapGesture.numberOfTapsRequired = 2
+        myMapView.addGestureRecognizer(doubleTapGesture)
+        tapGesture.require(toFail: doubleTapGesture)
+
         myMapView.delegate = context.coordinator
         return myMapView
     }
@@ -52,7 +61,9 @@ struct MapView: UIViewRepresentable {
             self.mapView = mapView
         }
 
-        @objc func addAnnotation(gesture: UIGestureRecognizer) {
+        @objc func addAnnotation(gesture: UITapGestureRecognizer) {
+            // シングルタップのみ判定
+            guard gesture.numberOfTapsRequired == 1 else { return }
             if gesture.state == .ended {
                 if let mapView = gesture.view as? MKMapView {
                     let point = gesture.location(in: mapView)
