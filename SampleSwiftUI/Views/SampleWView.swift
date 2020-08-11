@@ -117,7 +117,7 @@ struct WMyDropDelegate: DropDelegate {
             item.loadObject(ofClass: UIImage.self) { image, error in
                 if let image = image as? UIImage {
                     self.images.append(image)
-                    print(item.suggestedName)
+//                    print(item.suggestedName)
                     self.isDragging.toggle()
                 }
             }
