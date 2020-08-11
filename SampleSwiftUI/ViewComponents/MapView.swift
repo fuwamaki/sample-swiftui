@@ -10,7 +10,7 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
 
-    @ObservedObject var mapPin: MapPin
+    @ObservedObject var currentLocation: MapPin = sampleMapPin
 
     var locationManager: CLLocationManager = CLLocationManager()
 
@@ -35,23 +35,6 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MKMapView, context: Context) {
-//        let coordinate = CLLocationCoordinate2D(
-//            latitude: 37.3351,
-//            longitude: -122.0088)
-//        let span = MKCoordinateSpan(
-//            latitudeDelta: 2.0,
-//            longitudeDelta: 2.0)
-//        let region = MKCoordinateRegion(
-//            center: coordinate,
-//            span: span)
-//        uiView.setRegion(region, animated: true)
-
-        let point = MKPointAnnotation()
-        point.coordinate = mapPin.coordinate
-        point.title = mapPin.title
-        point.subtitle = mapPin.subtitle
-        uiView.addAnnotation(point)
-
         uiView.showsUserLocation = true
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startUpdatingLocation()
@@ -88,6 +71,15 @@ struct MapView: UIViewRepresentable {
             }
         }
 
+        // 位置情報が変わったら更新
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            if let latitude = locations.first?.coordinate.latitude,
+               let longitude = locations.first?.coordinate.longitude {
+                mapView.currentLocation.coordinate.latitude = latitude
+                mapView.currentLocation.coordinate.longitude = longitude
+            }
+        }
+
         // TODO: 全パターンうまくいく構造ではないはずなので要テスト・要修正
         func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
             switch manager.authorizationStatus() {
@@ -96,13 +88,17 @@ struct MapView: UIViewRepresentable {
             case .denied:
                 return
             case .notDetermined:
-                mapView.locationManager.requestWhenInUseAuthorization()
+                mapView.locationManager
+                    .requestWhenInUseAuthorization()
                 return
             case .authorizedWhenInUse:
-                mapView.locationManager.pausesLocationUpdatesAutomatically = false
+                mapView.locationManager
+                    .pausesLocationUpdatesAutomatically = false
             case .authorizedAlways:
-                mapView.locationManager.allowsBackgroundLocationUpdates = true
-                mapView.locationManager.pausesLocationUpdatesAutomatically = false
+                mapView.locationManager
+                    .allowsBackgroundLocationUpdates = true
+                mapView.locationManager
+                    .pausesLocationUpdatesAutomatically = false
             @unknown default:
                 break
             }
@@ -114,6 +110,6 @@ struct MapView: UIViewRepresentable {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(mapPin: sampleMapPin)
+        MapView()
     }
 }
