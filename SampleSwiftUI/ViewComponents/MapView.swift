@@ -212,7 +212,14 @@ struct MapView: UIViewRepresentable {
             if let coordinate = locations.first?.coordinate {
                 mapView.currentLocation.coordinate.latitude = coordinate.latitude
                 mapView.currentLocation.coordinate.longitude = coordinate.longitude
-                recordCoordinates.append(coordinate)
+                let value = recordCoordinates
+                    .filter {
+                        $0.latitude == coordinate.latitude
+                            && $0.longitude == coordinate.longitude }
+                    .first
+                if value != nil {
+                    recordCoordinates.append(coordinate)
+                }
             }
         }
 
