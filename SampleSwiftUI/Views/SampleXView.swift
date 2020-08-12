@@ -12,7 +12,8 @@ import CoreLocation
 enum MapSearchMode {
     case normal
     case route
-    case guide
+    case guideStart
+    case guiding
 }
 
 // UIKitのMapを利用した場合
@@ -46,7 +47,7 @@ struct SampleXView: View {
                                 .foregroundColor(.textSecondary)
                             Spacer()
                             Button("出発") {
-                                mode = .guide
+                                mode = .guideStart
                             }
                             .frame(width: 144, height: 40)
                             .background(Color.blue)

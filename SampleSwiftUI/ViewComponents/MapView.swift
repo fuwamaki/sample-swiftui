@@ -47,12 +47,15 @@ struct MapView: UIViewRepresentable {
                 let region = MKCoordinateRegion(center: location, span: span)
                 uiView.setRegion(region, animated: true)
             }
-        case .guide:
+        case .guideStart:
             if let location = locationManager.location?.coordinate {
                 let region = MKCoordinateRegion(center: location, span: span)
                 uiView.setRegion(region, animated: true)
             }
             uiView.userTrackingMode = .follow
+            DispatchQueue.main.async {
+                self.mode = .guiding
+            }
         default:
             break
         }
@@ -65,6 +68,11 @@ struct MapView: UIViewRepresentable {
     class Coordinator: NSObject, MKMapViewDelegate, CLLocationManagerDelegate {
 
         var mapView: MapView
+        var recordCoordinates: [CLLocationCoordinate2D] = []
+        var startCoordinate: CLLocationCoordinate2D?
+        var endCoordinate: CLLocationCoordinate2D?
+        var totalTime: TimeInterval = 0.0
+        var totalDistance: Double = 0.0
 
         init(_ mapView: MapView) {
             self.mapView = mapView
@@ -89,20 +97,74 @@ struct MapView: UIViewRepresentable {
                 annotation.coordinate = coordinate
                 view.addAnnotation(annotation)
                 self.mapView.mode = .route
-                addRoute(view: view, tapAnnotation: annotation)
-            case .guide:
+                displayRouteFromCurrent(view: view, destination: annotation)
+            case .guiding:
                 let point = gesture.location(in: view)
                 let coordinate = view.convert(point, toCoordinateFrom: view)
                 print("latitude: " + String(coordinate.latitude) + "  longitude: " + String(coordinate.longitude))
+            default:
+                break
             }
         }
 
-        private func addRoute(view: MKMapView, tapAnnotation: MKPointAnnotation) {
+        private func displayRouteFromCurrent(view: MKMapView, destination: MKPointAnnotation) {
             let directionsRequest = MKDirections.Request()
-            let coordinates: [CLLocationCoordinate2D] = [mapView.currentLocation.coordinate,
-                                                         tapAnnotation.coordinate]
+            directionsRequest.transportType = .automobile
+            directionsRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: mapView.currentLocation.coordinate))
+            directionsRequest.destination = MKMapItem(placemark: MKPlacemark(coordinate: destination.coordinate))
+            let direction = MKDirections(request: directionsRequest)
+            direction.calculate { [weak self] response, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let route = response?.routes[0] {
+                    view.addOverlay(route.polyline, level: .aboveRoads)
+                    self?.mapView.mapRoute.time = route.expectedTravelTime
+                    self?.mapView.mapRoute.advisoryNotices = route.advisoryNotices
+                    self?.mapView.mapRoute.distance = route.distance
+                    self?.mapView.mapRoute.name = route.name
+                    let insets = UIEdgeInsets(top: 48, left: 48, bottom: 100, right: 48)
+                    view.setVisibleMapRect(route.polyline.boundingMapRect,
+                                           edgePadding: insets,
+                                           animated: true)
+                }
+            }
+            startCoordinate = mapView.currentLocation.coordinate
+            endCoordinate = destination.coordinate
+        }
+
+        private func updateRoute(_ view: MKMapView) {
+            guard let endCoordinate = endCoordinate else { return }
+            let directionsRequest = MKDirections.Request()
+            directionsRequest.transportType = .automobile
+            directionsRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: mapView.currentLocation.coordinate))
+            directionsRequest.destination = MKMapItem(placemark: MKPlacemark(coordinate: endCoordinate))
+            let direction = MKDirections(request: directionsRequest)
+            direction.calculate { [weak self] response, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let route = response?.routes[0] {
+                    if view.overlays.count > 0 {
+                        view.removeOverlays(view.overlays)
+                    }
+                    view.addOverlay(route.polyline, level: .aboveRoads)
+                    self?.mapView.mapRoute.time = route.expectedTravelTime
+                    self?.mapView.mapRoute.advisoryNotices = route.advisoryNotices
+                    self?.mapView.mapRoute.distance = route.distance
+                    self?.mapView.mapRoute.name = route.name
+                }
+            }
+        }
+
+        // これはLogging出力時に使うメソッド
+        private func displayRecordCoordinates(view: MKMapView) {
+            guard let start = startCoordinate,
+                  let end = endCoordinate else { return }
+            totalTime = 0.0
+            totalDistance = 0.0
+            let directionsRequest = MKDirections.Request()
+            let coordinates = [start] + recordCoordinates + [end]
             let placemarks: [MKMapItem] = coordinates.compactMap {
-                return MKMapItem(placemark: MKPlacemark(coordinate: $0)) }
+                MKMapItem(placemark: MKPlacemark(coordinate: $0)) }
             directionsRequest.transportType = .automobile
             placemarks.enumerated().forEach {
                 if $0 < placemarks.count-1 {
@@ -112,16 +174,12 @@ struct MapView: UIViewRepresentable {
                     direction.calculate { [weak self] response, error in
                         if let error = error {
                             print(error.localizedDescription)
-                        } else if let polyline = response?.routes[0].polyline {
-                            view.addOverlay(polyline, level: .aboveRoads)
-                            if let route = response?.routes[0] {
-                                self?.mapView.mapRoute.time = route.expectedTravelTime
-                                self?.mapView.mapRoute.advisoryNotices = route.advisoryNotices
-                                self?.mapView.mapRoute.distance = route.distance
-                                self?.mapView.mapRoute.name = route.name
-                            }
+                        } else if let route = response?.routes[0] {
+                            view.addOverlay(route.polyline, level: .aboveRoads)
+                            self?.totalTime += route.expectedTravelTime
+                            self?.totalDistance = route.distance
                             let insets = UIEdgeInsets(top: 48, left: 48, bottom: 100, right: 48)
-                            view.setVisibleMapRect(polyline.boundingMapRect,
+                            view.setVisibleMapRect(route.polyline.boundingMapRect,
                                                    edgePadding: insets,
                                                    animated: true)
                         }
@@ -131,6 +189,7 @@ struct MapView: UIViewRepresentable {
         }
 
         // MARK: MKMapViewDelegate
+
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             let route: MKPolyline = overlay as! MKPolyline
             let routeRenderer = MKPolylineRenderer(polyline: route)
@@ -139,14 +198,21 @@ struct MapView: UIViewRepresentable {
             return routeRenderer
         }
 
+        func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+            if self.mapView.mode == .guiding {
+                updateRoute(mapView)
+                mapView.userTrackingMode = .follow
+            }
+        }
+
         // MARK: CLLocationManagerDelegate
 
         // 位置情報が変わったら更新
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            if let latitude = locations.first?.coordinate.latitude,
-               let longitude = locations.first?.coordinate.longitude {
-                mapView.currentLocation.coordinate.latitude = latitude
-                mapView.currentLocation.coordinate.longitude = longitude
+            if let coordinate = locations.first?.coordinate {
+                mapView.currentLocation.coordinate.latitude = coordinate.latitude
+                mapView.currentLocation.coordinate.longitude = coordinate.longitude
+                recordCoordinates.append(coordinate)
             }
         }
 
