@@ -14,6 +14,7 @@ enum MapSearchMode {
     case route
     case guideStart
     case guiding
+    case log
 }
 
 // UIKitのMapを利用した場合
@@ -70,6 +71,14 @@ struct SampleXView: View {
             })
             .navigationTitle("Map")
             .edgesIgnoringSafeArea(.bottom)
+            .navigationBarItems(trailing: Button(action: {
+                mode = .log
+            }, label: {
+                if mode == .guiding {
+                    Image(systemName: "location.north.line")
+                        .font(.system(size: 22))
+                }
+            }))
         }
     }
 }

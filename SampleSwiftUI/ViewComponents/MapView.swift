@@ -56,6 +56,8 @@ struct MapView: UIViewRepresentable {
             DispatchQueue.main.async {
                 self.mode = .guiding
             }
+        case .log:
+            context.coordinator.displayRecordCoordinates(view: uiView)
         default:
             break
         }
@@ -156,7 +158,7 @@ struct MapView: UIViewRepresentable {
         }
 
         // これはLogging出力時に使うメソッド
-        private func displayRecordCoordinates(view: MKMapView) {
+        func displayRecordCoordinates(view: MKMapView) {
             guard let start = startCoordinate,
                   let end = endCoordinate else { return }
             totalTime = 0.0
@@ -166,6 +168,9 @@ struct MapView: UIViewRepresentable {
             let placemarks: [MKMapItem] = coordinates.compactMap {
                 MKMapItem(placemark: MKPlacemark(coordinate: $0)) }
             directionsRequest.transportType = .automobile
+            if view.overlays.count > 0 {
+                view.removeOverlays(view.overlays)
+            }
             placemarks.enumerated().forEach {
                 if $0 < placemarks.count-1 {
                     directionsRequest.source = $1
@@ -178,10 +183,10 @@ struct MapView: UIViewRepresentable {
                             view.addOverlay(route.polyline, level: .aboveRoads)
                             self?.totalTime += route.expectedTravelTime
                             self?.totalDistance = route.distance
-                            let insets = UIEdgeInsets(top: 48, left: 48, bottom: 100, right: 48)
-                            view.setVisibleMapRect(route.polyline.boundingMapRect,
-                                                   edgePadding: insets,
-                                                   animated: true)
+//                            let insets = UIEdgeInsets(top: 48, left: 48, bottom: 100, right: 48)
+//                            view.setVisibleMapRect(route.polyline.boundingMapRect,
+//                                                   edgePadding: insets,
+//                                                   animated: true)
                         }
                     }
                 }
@@ -217,7 +222,7 @@ struct MapView: UIViewRepresentable {
                         $0.latitude == coordinate.latitude
                             && $0.longitude == coordinate.longitude }
                     .first
-                if value != nil {
+                if value == nil {
                     recordCoordinates.append(coordinate)
                 }
             }
