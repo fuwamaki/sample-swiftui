@@ -13,27 +13,19 @@ struct SampleZView: View {
     var body: some View {
         VStack {
             Text(String(format:"%.1f", stopWatchManeger.secondsElapsed))
-                .font(.custom("Futura", size: 50))
-                .padding(.top,200)
-                .padding(.bottom,100)
-                .padding(.trailing,100)
-                .padding(.leading,100)
+                .padding(.top, 200)
+                .padding(.bottom, 100)
+                .padding(.trailing, 100)
+                .padding(.leading, 100)
 
-            if stopWatchManeger.mode == .stop {
-                Button(action: {
-                    self.stopWatchManeger.start()
-                }) {
-                    Text("Start")
-                }
-            }
-            if stopWatchManeger.mode == .start {
+            switch stopWatchManeger.mode {
+            case .start:
                 Button(action: {
                     self.stopWatchManeger.pause()
                 }) {
                     Text("Pause")
                 }
-            }
-            if stopWatchManeger.mode == .pause {
+            case .pause:
                 Button(action: {
                     self.stopWatchManeger.start()
                 }) {
@@ -45,6 +37,12 @@ struct SampleZView: View {
                     Text("Stop")
                 }
                 .padding(.top, 10)
+            case .stop:
+                Button(action: {
+                    self.stopWatchManeger.start()
+                }) {
+                    Text("Start")
+                }
             }
             Spacer()
         }

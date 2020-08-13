@@ -7,22 +7,22 @@
 
 import Foundation
 
+enum StopWatchMode {
+    case start
+    case stop
+    case pause
+}
+
 class StopWatchManeger: ObservableObject {
 
-    enum stopWatchMode {
-        case start
-        case stop
-        case pause
-    }
-
-    @Published var mode:stopWatchMode = .stop
+    @Published var mode: StopWatchMode = .stop
     @Published var secondsElapsed = 0.0
     var timer = Timer()
 
     func start() {
         mode = .start
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true){ timer in
-            self.secondsElapsed += 0.1
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.secondsElapsed += 1.0
         }
     }
 
