@@ -285,6 +285,18 @@ struct ContentView: View {
                             })
                         Divider()
                     }
+                    VStack {
+                        NavigationLink(
+                            destination: SampleZView(),
+                            label: {
+                                Text("Sample Z")
+                                    .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
+                                    .padding(.leading, 24)
+                            })
+                        Divider()
+                    }
                 }
                 .navigationTitle("SampleSwiftUI")
                 .navigationBarItems(
