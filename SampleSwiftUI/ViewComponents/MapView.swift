@@ -230,7 +230,7 @@ struct MapView: UIViewRepresentable {
 
         // TODO: 全パターンうまくいく構造ではないはずなので要テスト・要修正
         func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-            switch manager.authorizationStatus() {
+            switch manager.authorizationStatus {
             case .restricted:
                 break
             case .denied:
