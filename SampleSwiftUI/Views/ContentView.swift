@@ -296,6 +296,15 @@ struct ContentView: View {
                                     .padding(.leading, 24)
                             })
                         Divider()
+                        NavigationLink(
+                            destination: SampleAAView(),
+                            label: {
+                                Text("Sample AA")
+                                    .frame(height: 44)
+                                    .frame(maxWidth: .infinity)
+                                    .foregroundColor(.textPrimary)
+                                    .padding(.leading, 24)
+                            })
                     }
                 }
                 .navigationTitle("SampleSwiftUI")
