@@ -25,6 +25,7 @@
 		2010EEB224C49CB5009CD040 /* SampleRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010EEB124C49CB5009CD040 /* SampleRView.swift */; };
 		202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AD20924BF739800EA0B79 /* SampleAView.swift */; };
 		2035593E24DD84CA0037897A /* SampleTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035593D24DD84CA0037897A /* SampleTView.swift */; };
+		20509071261EDFC3007D42C6 /* SampleABView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20509070261EDFC3007D42C6 /* SampleABView.swift */; };
 		20559223252016DA00868273 /* apple.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20559222252016DA00868273 /* apple.jpg */; };
 		20559228252016E500868273 /* blueberry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20559227252016E500868273 /* blueberry.jpg */; };
 		2055922D252016F100868273 /* lemon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2055922C252016F100868273 /* lemon.jpg */; };
@@ -95,6 +96,7 @@
 		2010EEB124C49CB5009CD040 /* SampleRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRView.swift; sourceTree = "<group>"; };
 		202AD20924BF739800EA0B79 /* SampleAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAView.swift; sourceTree = "<group>"; };
 		2035593D24DD84CA0037897A /* SampleTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTView.swift; sourceTree = "<group>"; };
+		20509070261EDFC3007D42C6 /* SampleABView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleABView.swift; sourceTree = "<group>"; };
 		20559222252016DA00868273 /* apple.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = apple.jpg; path = Assets.xcassets/apple.imageset/apple.jpg; sourceTree = "<group>"; };
 		20559227252016E500868273 /* blueberry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blueberry.jpg; path = Assets.xcassets/blueberry.imageset/blueberry.jpg; sourceTree = "<group>"; };
 		2055922C252016F100868273 /* lemon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lemon.jpg; path = Assets.xcassets/lemon.imageset/lemon.jpg; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				2004759124E2291A0024EC93 /* SampleYView.swift */,
 				208274C424E57B3400F05EE3 /* SampleZView.swift */,
 				208D713E2566B7BA0012B6CB /* SampleAAView.swift */,
+				20509070261EDFC3007D42C6 /* SampleABView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				20B16B1324BF511600511F43 /* ContentView.swift in Sources */,
 				205DD6B624C0B3C300309AAD /* SampleCViewModel.swift in Sources */,
 				2010EEA424C42AD2009CD040 /* SampleKView.swift in Sources */,
+				20509071261EDFC3007D42C6 /* SampleABView.swift in Sources */,
 				205DD6B924C0B8D200309AAD /* SampleRow.swift in Sources */,
 				2010EEA624C42EAA009CD040 /* SampleLView.swift in Sources */,
 				2010EEA224C42A6A009CD040 /* SampleJView.swift in Sources */,
