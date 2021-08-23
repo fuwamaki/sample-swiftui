@@ -17,7 +17,15 @@ struct SampleERow: View {
                     Text("The value is " + "\(self.viewModel.entities[index].isEnabled)")
                 }
             }
+            .frame(
+                minWidth: 0, maxWidth: .infinity,
+                minHeight: 32,
+                alignment: .leading
+            )
+            .listRowInsets(EdgeInsets()) // 余白を消す
+            .background(Color.backgroundPrimary)
         }
+        .environment(\.defaultMinListRowHeight, 10)
     }
 }
 
