@@ -9,12 +9,12 @@ import SwiftUI
 import PencilKit
 
 struct SampleADView: View {
-
     @State private var canvasView = CustomCanvasView()
+    @ObservedObject private var viewModel = SampleADViewModel()
 
     var body: some View {
         VStack {
-            CanvasView(canvasView: $canvasView)
+            CanvasView(canvasView: $canvasView, viewModel: viewModel)
             Button(action: {
                 canvasView.drawing = PKDrawing()
             }, label: {

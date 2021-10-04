@@ -11,9 +11,11 @@ import PencilKit
 
 struct CanvasView: UIViewRepresentable {
     @Binding var canvasView: CustomCanvasView
+    @ObservedObject var viewModel: SampleADViewModel
 
     func makeUIView(context: Context) -> PKCanvasView {
         canvasView.drawingPolicy = .anyInput
+        canvasView.delegate = viewModel
         canvasView.tool = PKInkingTool(.pen, color: .orange, width: 5)
         return canvasView
     }
