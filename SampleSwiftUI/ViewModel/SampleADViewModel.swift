@@ -11,6 +11,7 @@ import PencilKit
 class SampleADViewModel: NSObject, ObservableObject {
 
     @Published var isCheckPointMode: Bool = false
+    @Published var circleCount: Int = 1
 
     @Published var circleLocation1 = CGPoint(x: 40, y: 40)
     @Published var circleLocation2 = CGPoint(x: 40, y: 120)
@@ -18,6 +19,25 @@ class SampleADViewModel: NSObject, ObservableObject {
     @Published var circleLocation4 = CGPoint(x: 40, y: 280)
     @Published var circleLocation5 = CGPoint(x: 40, y: 360)
     @Published var circleLocation6 = CGPoint(x: 40, y: 440)
+
+    func reset() {
+        isCheckPointMode = false
+        circleCount = 1
+        circleLocation1 = CGPoint(x: 40, y: 40)
+        circleLocation2 = CGPoint(x: 40, y: 120)
+        circleLocation3 = CGPoint(x: 40, y: 200)
+        circleLocation4 = CGPoint(x: 40, y: 280)
+        circleLocation5 = CGPoint(x: 40, y: 360)
+        circleLocation6 = CGPoint(x: 40, y: 440)
+    }
+
+    func addCircle() {
+        circleCount += 1
+    }
+
+    func removeCircle() {
+        circleCount -= 1
+    }
 }
 
 
