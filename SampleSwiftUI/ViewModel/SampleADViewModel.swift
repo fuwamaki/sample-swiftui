@@ -12,6 +12,7 @@ class SampleADViewModel: NSObject, ObservableObject {
 
     @Published var isCheckPointMode: Bool = false
     @Published var circleCount: Int = 1
+    @Published var velocityList: [CGFloat] = []
 
     @Published var circleLocation1 = CGPoint(x: 40, y: 40)
     @Published var circleLocation2 = CGPoint(x: 40, y: 120)
@@ -33,6 +34,7 @@ class SampleADViewModel: NSObject, ObservableObject {
 
     func addCircle() {
         circleCount += 1
+        print(velocityList)
     }
 
     func removeCircle() {
