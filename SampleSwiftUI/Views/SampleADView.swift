@@ -16,18 +16,28 @@ struct SampleADView: View {
 
     var body: some View {
         VStack {
-            Text("x: \(location.x)")
-            Text("y: \(location.y)")
-            Circle()
-                .fill(Color.blue)
-                .frame(width: 64, height: 64)
-                .position(location)
-                .gesture(
-                    DragGesture().onChanged
-                    { value in
-                        location = value.location
-                    }
-                )
+            ZStack {
+                Circle()
+                    .fill(Color.blue)
+                    .frame(width: 64, height: 64)
+                    .position(viewModel.circleLocation1)
+                    .gesture(
+                        DragGesture().onChanged
+                        { value in
+                            viewModel.circleLocation1 = value.location
+                        }
+                    )
+                Circle()
+                    .fill(Color.blue)
+                    .frame(width: 64, height: 64)
+                    .position(viewModel.circleLocation2)
+                    .gesture(
+                        DragGesture().onChanged
+                        { value in
+                            viewModel.circleLocation2 = value.location
+                        }
+                    )
+            }
         }
 //        VStack {
 //            CanvasView(canvasView: $canvasView, viewModel: viewModel)

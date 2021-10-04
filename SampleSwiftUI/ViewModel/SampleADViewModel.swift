@@ -11,6 +11,8 @@ import PencilKit
 class SampleADViewModel: NSObject, ObservableObject {
 
     @Published var isPencilMode: Bool = false
+    @Published var circleLocation1 = CGPoint(x: 40, y: 40)
+    @Published var circleLocation2 = CGPoint(x: 40, y: 120)
 }
 
 
