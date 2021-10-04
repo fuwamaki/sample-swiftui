@@ -26,6 +26,7 @@
 		201629D5270AC55100ED8987 /* SampleADView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201629D4270AC55100ED8987 /* SampleADView.swift */; };
 		201629D7270AC7B800ED8987 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201629D6270AC7B800ED8987 /* CanvasView.swift */; };
 		201629D9270ACA4300ED8987 /* SampleADViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201629D8270ACA4300ED8987 /* SampleADViewModel.swift */; };
+		201629DB270AD42200ED8987 /* CustomCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201629DA270AD42200ED8987 /* CustomCircle.swift */; };
 		202AD20A24BF739800EA0B79 /* SampleAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AD20924BF739800EA0B79 /* SampleAView.swift */; };
 		2035593E24DD84CA0037897A /* SampleTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2035593D24DD84CA0037897A /* SampleTView.swift */; };
 		20509071261EDFC3007D42C6 /* SampleABView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20509070261EDFC3007D42C6 /* SampleABView.swift */; };
@@ -101,6 +102,7 @@
 		201629D4270AC55100ED8987 /* SampleADView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleADView.swift; sourceTree = "<group>"; };
 		201629D6270AC7B800ED8987 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		201629D8270ACA4300ED8987 /* SampleADViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleADViewModel.swift; sourceTree = "<group>"; };
+		201629DA270AD42200ED8987 /* CustomCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircle.swift; sourceTree = "<group>"; };
 		202AD20924BF739800EA0B79 /* SampleAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAView.swift; sourceTree = "<group>"; };
 		2035593D24DD84CA0037897A /* SampleTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTView.swift; sourceTree = "<group>"; };
 		20509070261EDFC3007D42C6 /* SampleABView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleABView.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				20DBD86324C1523100389ED9 /* SampleERow.swift */,
 				2004758F24E226A70024EC93 /* MapView.swift */,
 				201629D6270AC7B800ED8987 /* CanvasView.swift */,
+				201629DA270AD42200ED8987 /* CustomCircle.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				2004759724E2ACE00024EC93 /* MapRoute.swift in Sources */,
 				2057A06924DDB72B0050B196 /* SampleUView.swift in Sources */,
 				2010EEB224C49CB5009CD040 /* SampleRView.swift in Sources */,
+				201629DB270AD42200ED8987 /* CustomCircle.swift in Sources */,
 				2057A07224DE80570050B196 /* Color+Addition.swift in Sources */,
 				2010EEB024C49A5F009CD040 /* SampleQView.swift in Sources */,
 				2088BA3E24C184F300B38A11 /* SampleFView.swift in Sources */,

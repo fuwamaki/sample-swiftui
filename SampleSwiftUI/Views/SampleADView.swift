@@ -17,26 +17,12 @@ struct SampleADView: View {
     var body: some View {
         VStack {
             ZStack {
-                Circle()
-                    .fill(Color.blue)
-                    .frame(width: 64, height: 64)
-                    .position(viewModel.circleLocation1)
-                    .gesture(
-                        DragGesture().onChanged
-                        { value in
-                            viewModel.circleLocation1 = value.location
-                        }
-                    )
-                Circle()
-                    .fill(Color.blue)
-                    .frame(width: 64, height: 64)
-                    .position(viewModel.circleLocation2)
-                    .gesture(
-                        DragGesture().onChanged
-                        { value in
-                            viewModel.circleLocation2 = value.location
-                        }
-                    )
+                CustomCircle(location: $viewModel.circleLocation1)
+                CustomCircle(location: $viewModel.circleLocation2)
+                CustomCircle(location: $viewModel.circleLocation3)
+                CustomCircle(location: $viewModel.circleLocation4)
+                CustomCircle(location: $viewModel.circleLocation5)
+                CustomCircle(location: $viewModel.circleLocation6)
             }
         }
 //        VStack {
