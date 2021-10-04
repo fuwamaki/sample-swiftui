@@ -20,7 +20,9 @@ struct CanvasView: UIViewRepresentable {
         return canvasView
     }
 
-    func updateUIView(_ canvasView: PKCanvasView, context: Context) { }
+    func updateUIView(_ canvasView: PKCanvasView, context: Context) {
+        canvasView.isUserInteractionEnabled = !viewModel.isCheckPointMode
+    }
 }
 
 final class CustomCanvasView: PKCanvasView {
@@ -34,7 +36,7 @@ final class CustomCanvasView: PKCanvasView {
             let time = CGFloat(eventTime - prev)
             let distance = sqrt(pow((location.x-prevLocation.x), 2)
                                     + pow((location.y-prevLocation.y), 2))
-            print("velocity: \(distance/time)")
+//            print("velocity: \(distance/time)")
         }
         prevEventTime = event?.timestamp
     }

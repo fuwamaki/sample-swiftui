@@ -10,7 +10,8 @@ import PencilKit
 
 class SampleADViewModel: NSObject, ObservableObject {
 
-    @Published var isPencilMode: Bool = false
+    @Published var isCheckPointMode: Bool = false
+
     @Published var circleLocation1 = CGPoint(x: 40, y: 40)
     @Published var circleLocation2 = CGPoint(x: 40, y: 120)
     @Published var circleLocation3 = CGPoint(x: 40, y: 200)
@@ -22,7 +23,8 @@ class SampleADViewModel: NSObject, ObservableObject {
 
 // MARK: PKCanvasViewDelegate
 extension SampleADViewModel: PKCanvasViewDelegate {
+    // ペン書きを終えたタイミング（=一筆書き後）ではしる処理
     func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
-        print("canvasViewDidEndUsingTool")
+        isCheckPointMode.toggle()
     }
 }
