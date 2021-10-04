@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
-import MapKit
+import PencilKit
 
 struct SampleADView: View {
 
+    @State private var canvasView = CustomCanvasView()
+
     var body: some View {
         VStack {
-            Text("test")
+            CanvasView(canvasView: $canvasView)
+            Button(action: {
+                canvasView.drawing = PKDrawing()
+            }, label: {
+                Text("Clear")
+            })
         }
     }
 }
